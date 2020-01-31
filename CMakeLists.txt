@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.12.3)
 project(Rain_Engine)
 
 find_package(OpenGL REQUIRED)
+find_package(GLEW REQUIRED)
 
 if(CMAKE_SOURCE_DIR MATCHES " ")
     message("Your Source Directory contains spaces. If you experience problems when compiling, this can be the cause.")
@@ -10,16 +11,22 @@ if(CMAKE_BINARY_DIR MATCHES " ")
     message("Your Build Directory contains spaces. If you experience problems when compiling, this can be the cause.")
 endif()
 
+
+add_subdirectory(external/glfw)
+#add_subdirectory(external/glew-cmake)
+
 include_directories(
         external/glm
-        external/glew
-        external/glfw
+        external/glfw/include
+        ${GLEW_INCLUDE_DIRS}
 )
 
 set(ALL_LIBS
         ${OPENGL_LIBRARY}
+        ${OPENGL_glu_LIBRARY}
         glfw
-        GLEW
+        ${GLFW_LIBRARIES}
+        ${GLEW_LIBRARIES}
 )
 
 add_definitions(
