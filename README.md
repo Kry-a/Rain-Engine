@@ -1,4 +1,4 @@
-# Rain-Engine
+# Rain-Engine [![Build Status](https://travis-ci.com/KrasnotR/Rain-Engine.svg?branch=master)](https://travis-ci.com/KrasnotR/Rain-Engine) [![CodeFactor](https://www.codefactor.io/repository/github/krasnotr/rain-engine/badge)](https://www.codefactor.io/repository/github/krasnotr/rain-engine)
 An amateurish 3D game engine
 
 ## Building (Linux)
