@@ -4,7 +4,7 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
-#include "glfw_utils.hpp"
+#include "engine/glfw_utils.hpp"
 
 using namespace glm;
 

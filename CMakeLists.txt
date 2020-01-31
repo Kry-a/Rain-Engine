@@ -39,5 +39,5 @@ add_definitions(
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Rain_Engine src/main.cpp src/glfw_utils.hpp)
+add_executable(Rain_Engine src/main.cpp src/engine/glfw_utils.hpp src/engine/GameObject.cpp src/engine/GameObject.hpp)
 target_link_libraries(${PROJECT_NAME} ${ALL_LIBS})
