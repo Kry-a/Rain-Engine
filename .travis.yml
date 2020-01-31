@@ -17,5 +17,6 @@ addons:
       - libxext-dev
       - libxcursor-dev
       - libxinerama-dev
+      - libglew-dev
 
 script: ./build.sh
