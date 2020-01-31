@@ -1,2 +1,2 @@
 # Rain-Engine
-Amateurish 3D game engine
+An amateurish 3D game engine
