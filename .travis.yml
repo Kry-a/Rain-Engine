@@ -1,0 +1,21 @@
+language: cpp
+os: linux
+dist: bionic
+compiler: gcc
+
+addons:
+  apt:
+    packages:
+      - cmake
+      - make
+      - g++
+      - libx11-dev
+      - libxi-dev
+      - libgl1-mesa-dev
+      - libglu1-mesa-dev
+      - libxrandr-dev
+      - libxext-dev
+      - libxcursor-dev
+      - libxinerama-dev
+
+script: ./build.sh
