@@ -12,7 +12,7 @@ su && yum install cmake make g++ libx11-dev libxi-dev libgl1-mesa-dev libglu1-me
 ```
 * 2 . Download the repository
 ```bash
-git clone git@github.com:KrasnotR/Rain-Engine.git
+git clone https://github.com/KrasnotR/Rain-Engine.git
 cd Rain-Engine
 git submodule update --init --recursive
 ```
