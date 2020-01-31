@@ -11,6 +11,21 @@ if(CMAKE_BINARY_DIR MATCHES " ")
     message("Your Build Directory contains spaces. If you experience problems when compiling, this can be the cause.")
 endif()
 
+if(UNIX AND NOT APPLE)
+    set(LINUX TRUE)
+endif()
+
+if(UNIX AND APPLE)
+    set(MACOS TRUE)
+endif()
+
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Debug)
+endif()
+
+set(CMAKE_CXX_FLAGS "-Wall -Wextra")
+set(CMAKE_CXX_FLAGS_DEBUG "-g")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
 add_subdirectory(external/glfw)
 #add_subdirectory(external/glew-cmake)
