@@ -4,6 +4,8 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
+#include "glfw_utils.hpp"
+
 using namespace glm;
 
 int main() {
@@ -13,6 +15,7 @@ int main() {
         return EXIT_FAILURE;
     }
 
+    // Anti aliasing with 4 samples
     glfwWindowHint(GLFW_SAMPLES, 4);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -33,6 +36,9 @@ int main() {
         fprintf(stderr, "Failed to initialize GLEW\n");
         return EXIT_FAILURE;
     }
+
+    // Centers the window
+    gUtilCenterWindow(window, gUtilGetBestMonitor(window));
 
     do {
         glClear(GL_COLOR_BUFFER_BIT);
