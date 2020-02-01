@@ -4,6 +4,4 @@
 
 #include "GameScript.hpp"
 
-GameScript::GameScript(GameObject *origin) {
-    gameObject = origin;
-}
+GameScript::GameScript() {}

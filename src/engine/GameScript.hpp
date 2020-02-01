@@ -8,15 +8,17 @@
 
 #include "GameObject.hpp"
 
+class GameObject;
+
 class GameScript {
 public:
     GameObject *gameObject;
 public:
+    GameScript();
     virtual void Awake() = 0;
     virtual void Start() = 0;
     virtual void Update() = 0;
     virtual void LateUpdate() = 0;
-    explicit GameScript(GameObject *origin);
 };
 
 

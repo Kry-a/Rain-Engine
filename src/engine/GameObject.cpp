@@ -4,12 +4,23 @@
 
 #include "GameObject.hpp"
 
-GameObject::GameObject() {
-    for (auto & script : scripts) {
-        script.Awake();
-    }
+GameObject::GameObject() = default;
 
+void GameObject::update() {
     for (auto & script : scripts) {
-        script.Start();
+        script->Update();
     }
+}
+
+void GameObject::lateUpdate() {
+    for (auto & script : scripts) {
+        script->LateUpdate();
+    }
+}
+
+void GameObject::addScript(GameScript *yes) {
+    scripts.push_back(yes);
+    yes->gameObject = this;
+    yes->Awake();
+    yes->Start();
 }

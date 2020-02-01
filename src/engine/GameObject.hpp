@@ -14,14 +14,20 @@
 
 using namespace glm;
 
+class GameScript;
+
 class GameObject {
 public:
     vec3 position{.x = 0, .y = 0, .z = 0};
     quat rotation{.w = 0, .x = 0, .y = 0, .z = 0};
     vec3 scale{.x = 1, .y = 1, .z = 1};
-    std::vector<GameScript> scripts;
+    std::vector<GameScript*> scripts;
+
 public:
     GameObject();
+    void update();
+    void lateUpdate();
+    void addScript(GameScript* pScript);
 };
 
 
