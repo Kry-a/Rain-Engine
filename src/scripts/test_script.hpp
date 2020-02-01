@@ -8,9 +8,11 @@
 
 #include "../engine/GameScript.hpp"
 
-class test_script : GameScript {
-
-    void Awake();
+class test_script : public GameScript {
+    void Awake() override;
+    void Start() override;
+    void Update() override;
+    void LateUpdate() override;
 };
 
 

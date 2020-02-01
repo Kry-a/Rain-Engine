@@ -5,6 +5,8 @@
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 #include "engine/glfw_utils.hpp"
+#include "engine/GameObject.hpp"
+#include "scripts/test_script.hpp"
 
 using namespace glm;
 
@@ -34,14 +36,29 @@ int main() {
     glewExperimental = true;
     if (glewInit() != GLEW_OK) {
         fprintf(stderr, "Failed to initialize GLEW\n");
+        glfwTerminate();
         return EXIT_FAILURE;
     }
+
+    glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
+
+    glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
+
+    glEnable(GL_DEPTH_TEST);
+    glDepthFunc(GL_LESS);
+    glEnable(GL_CULL_FACE);
 
     // Centers the window
     gUtilCenterWindow(window, gUtilGetBestMonitor(window));
 
+    auto cube = new GameObject();
+    cube->addScript(new test_script());
+
     do {
         glClear(GL_COLOR_BUFFER_BIT);
+
+        cube->update();
+        cube->lateUpdate();
 
         glfwSwapBuffers(window);
         glfwPollEvents();

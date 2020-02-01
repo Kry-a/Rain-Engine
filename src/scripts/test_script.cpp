@@ -8,3 +8,15 @@
 void test_script::Awake() {
     std::cout << "I AM ALIVEEEE" << std::endl;
 }
+
+void test_script::Start() {
+
+}
+
+void test_script::Update() {
+
+}
+
+void test_script::LateUpdate() {
+
+}
